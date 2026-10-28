@@ -8,9 +8,9 @@ summary: |-
 upstream:
   url: https://bitcoinknots.org/
   version:
-    type: command
-    run: |-
-      curl -sX GET http://ppa.launchpad.net/luke-jr/bitcoinknots/ubuntu/dists/resolute/main/binary-amd64/Packages.gz | gunzip |grep -A 7 -m 1 'Package: bitcoin' | awk -F ': ' '/Version/{print $2;exit}'
+    type: deb_packages
+    index_url: http://ppa.launchpad.net/luke-jr/bitcoinknots/ubuntu/dists/resolute/main/binary-amd64/Packages.gz
+    package: bitcoin-qt
 
 release:
   branch: master
