@@ -11,6 +11,13 @@ upstream:
     type: deb_packages
     index_url: http://ppa.launchpad.net/luke-jr/bitcoinknots/ubuntu/dists/resolute/main/binary-amd64/Packages.gz
     package: bitcoin-qt
+  notes:
+    type: github_release
+    repo: bitcoinknots/bitcoin
+    tag: v${VERSION}
+    transform:
+    - regex: (\.\d+)?-resolute\d+$
+      replace: ''
 
 release:
   branch: master
